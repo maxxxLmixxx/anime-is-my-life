@@ -24,7 +24,7 @@ function render(scene, camera, renderer, callback) {
 const { scene, camera, renderer, loader } = threeInit({
     width: window.innerWidth, height: window.innerHeight, root: '.root'
 }), controls = new THREE.OrbitControls(camera, renderer.domElement),
-    ambient = new THREE.AmbientLight(0xffEEff, 0.9);
+    ambient = new THREE.AmbientLight(0xFFEEFF, 1);
 
 loader.load('assets/3D/snow/scene.gltf', (gltf) => {    
     scene.add(ambient);
