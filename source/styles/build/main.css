@@ -13,8 +13,8 @@ html, body, .root {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #FFAFBD;
-  background: radial-gradient(#C9FFBF, #FFAFBD);
+  background: #020024;
+  background: radial-gradient(circle, #020024 0%, #090979 35%, #00d4ff 100%);
 }
 
 /*# sourceMappingURL=main.css.map */
