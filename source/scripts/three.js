@@ -51,7 +51,7 @@ loader.load('../assets/3D/scene.gltf', (gltf) => {
 
 function onWindowResize(e) {
     camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectileMatrix();
+    camera.updateProjectionMatrix();
 
     renderer.setSize(window.innerWidth, window.innerHeight)
 }
