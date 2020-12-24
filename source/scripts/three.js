@@ -26,7 +26,7 @@ const { scene, camera, renderer, loader } = threeInit({
 }), controls = new THREE.OrbitControls(camera, renderer.domElement),
     ambient = new THREE.AmbientLight(0x404040, 1);
 
-loader.load('../assets/3D/scene.gltf', (gltf) => {    
+loader.load('assets/3D/scene.gltf', (gltf) => {    
     scene.add(ambient);
     scene.add(gltf.scene);
 
