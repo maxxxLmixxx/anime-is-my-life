@@ -1,6 +1,11 @@
-@mixin gradient {
+@mixin gradient-1 {
      background: #FFAFBD;
      background: radial-gradient(#C9FFBF, #FFAFBD);
+}
+
+@mixin gradient-2 {
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
 
 *, *::after, *::before {
@@ -19,5 +24,5 @@ html, body, .root {
     align-items: center;
     justify-content: center;
 
-    @include gradient;
+    @include gradient-2;
 }

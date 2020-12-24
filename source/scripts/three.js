@@ -24,17 +24,17 @@ function render(scene, camera, renderer, callback) {
 const { scene, camera, renderer, loader } = threeInit({
     width: window.innerWidth, height: window.innerHeight, root: '.root'
 }), controls = new THREE.OrbitControls(camera, renderer.domElement),
-    ambient = new THREE.AmbientLight(0x404040, 1);
+    ambient = new THREE.AmbientLight(0xffEEff, 0.9);
 
-loader.load('assets/3D/scene.gltf', (gltf) => {    
+loader.load('assets/3D/snow/scene.gltf', (gltf) => {    
     scene.add(ambient);
     scene.add(gltf.scene);
 
-    camera.position.set(-190, 50, 50);
+    camera.position.set(-15, 5, 0);
     
-    gltf.scene.position.x = +25;
-    gltf.scene.position.y = -50;
-    gltf.scene.position.z = -10;
+    // gltf.scene.position.x = +25;
+    // gltf.scene.position.y = -50;
+    // gltf.scene.position.z = -10;
     
     const girl3D = gltf.scene.children[0];
     girl3D.rotation.z = 300;
