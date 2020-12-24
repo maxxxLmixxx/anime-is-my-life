@@ -1,0 +1,17 @@
+{
+  "name": "THREE.js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently \"live-server ./source\" \"sass --watch ./source/styles/index.scss ./source/styles/build/main.css\""
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "live-server": "^1.2.1",
+    "sass": "^1.30.0"
+  },
+  "dependencies": {
+    "three": "^0.124.0"
+  }
+}
