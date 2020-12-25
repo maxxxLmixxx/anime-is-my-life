@@ -24,28 +24,30 @@ function render(scene, camera, renderer, callback) {
 const { scene, camera, renderer, loader } = threeInit({
     width: window.innerWidth, height: window.innerHeight, root: '.root'
 }), controls = new THREE.OrbitControls(camera, renderer.domElement),
-    ambient = new THREE.AmbientLight(0xFFEEFF, 1);
+    ambient = new THREE.AmbientLight(0xFFFFFF, 0.7),
+    pointLight = new THREE.PointLight(0xFFFFFF, 1);
 
+const pointLightHelper = new THREE.PointLightHelper(pointLight);
+
+pointLight.position.y = 6;
+pointLight.position.x -= -1;
+
+scene.add(ambient);
+scene.add(pointLight);
+scene.add(pointLightHelper);
+
+camera.position.set(-15, 5, -10);
+
+controls.autoRotate = true;
+controls.autoRotateSpeed = 1;
+        
 loader.load('assets/3D/snow/scene.gltf', (gltf) => {    
-    scene.add(ambient);
+    // gltf.scene.scale.set(0.01, 0.01, 0.01)
     scene.add(gltf.scene);
-
-    camera.position.set(-15, 5, 0);
-    
-    // gltf.scene.position.x = +25;
-    // gltf.scene.position.y = -50;
-    // gltf.scene.position.z = -10;
-    
-    const girl3D = gltf.scene.children[0];
-    girl3D.rotation.z = 300;
-
-    controls.autoRotate = true;
-    controls.autoRotateSpeed = 5;
 
     window.addEventListener('resize', onWindowResize);
     render(scene, camera, renderer, () => {
         controls.update()
-        // girl3D.rotation.z += 0.01;
     });
 });
 
